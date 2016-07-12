@@ -1,0 +1,62 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:animateLayoutChanges="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:paddingLeft="5dp"
+        android:padding="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ticketlistitem_ticket_container">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ticket"
+                android:id="@+id/ticketlistitem_image" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="35dp"
+                android:text="From - To"
+                android:textStyle="bold"
+                android:id="@+id/ticketlistitem_fromto"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/ticketlistitem_image"
+                android:layout_toEndOf="@+id/ticketlistitem_image"
+                android:layout_marginLeft="15dp"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:text="23:00 30/12/2015 - 3 €"
+                android:id="@+id/ticketlistitem_date"
+                android:layout_below="@+id/ticketlistitem_fromto"
+                android:layout_toRightOf="@+id/ticketlistitem_image"
+                android:layout_toEndOf="@+id/ticketlistitem_image"
+                android:layout_marginLeft="15dp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:animateLayoutChanges="true"
+            android:layout_width="fill_parent"
+            android:scaleType="fitStart"
+            android:id="@+id/ticketlistitem_qrcode"
+            android:layout_below="@+id/ticketlistitem_ticket_container"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="false"
+            android:layout_marginTop="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true" />
+
+    </RelativeLayout>
+</merge>

@@ -1,0 +1,57 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+  file_factory:
+    class: AppBundle\Service\FileSystem\FileFactory
+    arguments: [@ar.file_system_provider,%ar_banking_temp_upload_dir%]
+
+
+  file_manager:
+    class: AppBundle\Service\FileSystem\FileManager
+    arguments: [@file_factory,@ar.file_system_provider,%ar_banking_permanent_upload_dir%]
+
+
+  channel.subscriber:
+    class: AppBundle\Subscriber\ChannelSubscriber
+    arguments: [@file_manager]
+    tags:
+      - { name:  kernel.event_subscriber  }
+
+  version.subscriber:
+    class: AppBundle\Subscriber\VersionSubscriber
+    arguments: [@file_manager]
+    tags:
+      - { name:  kernel.event_subscriber}
+
+  file.subscriber:
+    class: AppBundle\Subscriber\FileSubscriber
+    arguments: [@file_manager]
+    tags:
+      - { name: kernel.event_subscriber }
+
+
+  ar.file_system_provider:
+    class: Symfony\Component\Filesystem\Filesystem
+
+  ar.manager.path:
+    class: AppBundle\Service\PathManager\PathManager
+    arguments: [%ar_banking_permanent_upload_dir%,%ar_banking_temp_upload_dir%,@ar.file_system_provider]
+
+  ar.manager.trackable:
+    class: AppBundle\Service\TrackableManager\TrackableManager
+    arguments: [@file_factory,@ar.file_system_provider,@ar.manager.path,%ar_banking_temp_upload_dir%]
+
+  ar.manager.scene:
+    class: AppBundle\Service\SceneManager\SceneManager
+    arguments: [@file_factory,@ar.file_system_provider,@ar.manager.path,%ar_banking_temp_upload_dir%,@twig]
+
+  ar.manager.channel:
+    class: AppBundle\Service\ChannelManager\ChannelManager
+    arguments: [@file_factory,@ar.file_system_provider,@ar.manager.path,%ar_banking_temp_upload_dir%]

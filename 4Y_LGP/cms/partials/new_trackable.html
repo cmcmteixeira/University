@@ -1,0 +1,60 @@
+<div ng-include="'partials/topbar.html'"></div>
+<div ng-include="'partials/navbar.html'"></div>
+<div class="wrapper channelMenu" ng-controller="newTrackableCtrl" >
+    <div ng-include="'partials/messages.html'"></div>
+
+    <div class="box" >
+        <div class="box-header">
+            <h3 class="box-title">New Trackable</h3>
+        </div>
+
+        <form role="form" ng-submit="submit()">
+            <div class="box-body">
+                <div class="form-group">
+                    <div ng-repeat-end class="row">
+                        <div class="col-md-10">
+                            <label for="trackablename">Name</label>
+                            <input ng-model="trackable.name" required="" type="text" class="form-control" id="trackablename" placeholder="Trackable Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div ng-repeat-end class="row">
+                            <div class="col-md-10">
+                                <label for="trackabledescription">Description</label>
+                                <input ng-model="trackable.description" type="text" class="form-control" id="trackabledescription" placeholder="Description">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  ng-repeat-start="(key,scene) in trackable.scenes">Scene</label>
+                        <div    ng-repeat-end class="row">
+                            <div class="col-md-10">
+                                <select ng-model='trackable.scenes[key].id' class="form-control" >
+                                    <option selected disabled hidden value=''></option>
+                                    <option ng-repeat="scene in scenes" value="{{scene.id}}" >{{scene.name}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="">
+                                    <a class="btn btn-success" ng-click="createNewSelect()"><i class="fa fa-plus"></i></a>
+                                    <a class="btn btn-danger" ng-click="removeNewSelect()"><i class="fa fa-trash-o"></i></a>
+                                </div>
+                            </div>
+                        </div >
+                    </div>
+
+                    <div class="form-group" required>
+                        <label for="file">File input</label>
+                        <input ng-model="files" ngf-select type="file" id="file">
+                        <p class="help-block">Trackable File.</p>
+                    </div>
+                </div><!-- /.box-body -->
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

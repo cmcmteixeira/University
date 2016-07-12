@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_account">Account</string>
+
+    <string name="account_user_label">User</string>
+    <string name="account_hint_username">username</string>
+    <string name="account_hint_email">email</string>
+    <string name="account_hint_password">password</string>
+    <string name="account_hint_confirm_password">confirm password</string>
+
+
+    <string name="account_card_label">Card</string>
+    <string name="account_hint_card_number">credit card nr.</string>
+    <string name="account_hint_validity">validity</string>
+
+    <string name="account_submit">Submit Changes</string>
+
+</resources>

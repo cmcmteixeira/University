@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_timetable_proceed">Proceed</string>
+
+    <string name="select_timetable_dialog_confirm">Proceed</string>
+    <string name="select_timetable_dialog_cancel">Cancel</string>
+    <string name="select_timetable_dialog_title">Confirm Trip</string>
+
+
+
+</resources>

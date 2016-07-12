@@ -1,0 +1,158 @@
+
+options
+{
+    LOOKAHEAD=1;
+    STATIC=false;
+}
+
+PARSER_BEGIN(InvariantParser)
+/*Coisas p/ adicionar depois de compilar:
+ SimpleNode:
+
+  public Vector<Integer> operators;
+  public String numVar;
+  public boolean negative;
+  public boolean localVar;
+  public int getID() throws ParseException{
+	return id;
+  }
+
+
+*/
+
+package invariant.invariantEvaluator.Parser;
+import java.util.HashMap;
+import java.util.Vector;
+import java.lang.Integer;
+import java.lang.String;
+
+public class InvariantParser
+{
+	Vector<String> vars;
+	InvariantParserConstants constants;
+	 SimpleNode getTree(String expr) throws ParseException{
+            InputStream stream = new ByteArrayInputStream(expr.getBytes());
+            ReInit(stream);
+                return Inv_exp();
+        }
+
+
+}
+
+PARSER_END(InvariantParser)
+
+
+SKIP :
+{
+	" " |  "\r" | "\t" | "\n"
+}
+
+TOKEN:
+{
+          <VAR		 : "$"(["0"-"9"])+ >
+        | <VAR_TAG   : "var" >
+        | <VAR_LOCAL : (["a"-"z"]|["A"-"Z"])+(["a"-"z"]|["A"-"Z"]|["1"-"9"])*>
+      	| <NUM		 : (["0"-"9"])*(".")?(["0"-"9"])+ >
+      	| <OR		 : "||" >
+		| <AND		 : "&&" >
+		| <REC_BRAC_O: "["  >
+		| <REC_BRAC_C: "]"  >
+		| <PAR_OPEN  : "("  >
+		| <PAR_CLOSE : ")"  >
+		| <PAR_SETO  : "{"  >
+		| <PAR_SETC  : "}"  >
+		| <COMMA     : ","  >
+		| <SEMMICOLON: ";"  >
+		| <EQUAL 	 : "="  >
+		| <NOTEQUAL  : "!=" >
+		| <INF       : "@inf">
+		| <OP_EXP    : "^">
+		| <OP_SUM    :  "+" >
+		| <OP_DIFF   :  "-" >
+		| <OP_MUL    :  "*" >
+		| <OP_DIV    :  "/" >
+
+}
+SimpleNode Inv_exp():{}{
+	( VarDecl() )*
+	OrExpr() 
+	{return jjtThis;}
+}
+void OrExpr():{}{
+	AndExpr() [OrExpr_()]
+}
+void OrExpr_():{}{
+	( <OR> AndExpr() ) [OrExpr_()]
+}
+void AndExpr():{}{
+	atomInv() [AndExpr_()]
+}
+void AndExpr_():{}{
+	<AND> atomInv() [AndExpr_()]
+}
+void atomInv():{Token value;}{
+	{jjtThis.operators = new Vector<Integer>();}
+
+	(
+		value=<VAR>{jjtThis.numVar =value.toString();} |
+		value=<VAR_LOCAL>{jjtThis.numVar =value.toString();jjtThis.localVar=true;}
+	) 
+	 (<EQUAL>{jjtThis.operators.add(constants.EQUAL);}|<NOTEQUAL>{jjtThis.operators.add(constants.NOTEQUAL);}) (Set() | Range() ) | <PAR_OPEN> OrExpr() <PAR_CLOSE>
+}
+
+
+void Range():{}{
+	{jjtThis.operators = new Vector<Integer>();}
+
+	 (<REC_BRAC_O> {jjtThis.operators.add(constants.REC_BRAC_O);}| <REC_BRAC_C>{jjtThis.operators.add(constants.REC_BRAC_C);}) Aritm()","Aritm() (<REC_BRAC_O> {jjtThis.operators.add(constants.REC_BRAC_O);}| <REC_BRAC_C> {jjtThis.operators.add(constants.REC_BRAC_C);})
+}
+void Set():{}{
+	<PAR_SETO> Aritm() (","Aritm())* <PAR_SETC>
+}
+
+void VarDecl():{Token value;}{
+	<VAR_TAG> value=<VAR_LOCAL>{jjtThis.numVar =value.toString();} <EQUAL> Aritm() <SEMMICOLON>
+}
+
+
+
+A
+void Aritm():{}{
+	SumExpr() | <INF>
+}
+void SumExpr():{}{
+	multExpr() [SumExpr_()]
+}
+void SumExpr_():{}{
+	{jjtThis.operators = new Vector<Integer>();}
+	(<OP_SUM>{jjtThis.operators.add(constants.OP_SUM);}|<OP_DIFF>{jjtThis.operators.add(constants.OP_DIFF);})  multExpr() [SumExpr_()]
+}
+void multExpr():{}{
+	atom() [multExpr_()]
+}
+void multExpr_():{}{	
+	{jjtThis.operators = new Vector<Integer>();}
+	(<OP_MUL>{jjtThis.operators.add(constants.OP_MUL);}|
+     <OP_DIV>{jjtThis.operators.add(constants.OP_DIV);}|
+     <OP_EXP>{jjtThis.operators.add(constants.OP_EXP);
+     }	) atom()
+}
+void atom():{Token value;}{
+
+	{jjtThis.operators = new Vector<Integer>();jjtThis.negative=false;}
+	((<OP_DIFF>{jjtThis.negative = !jjtThis.negative;}|<OP_SUM>))* 
+	(
+		(	
+			value=<NUM>		 {jjtThis.operators.add(constants.NUM);} | 
+			value=<VAR>		 {jjtThis.operators.add(constants.VAR);} |
+			value=<VAR_LOCAL>{jjtThis.operators.add(constants.VAR_LOCAL);} 
+		) {jjtThis.numVar =value.toString();}	|
+	 	<PAR_OPEN> SumExpr() <PAR_CLOSE>
+	 )
+	
+	 
+
+
+
+}
+	

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA032528-0867-43BA-97E7-D6348AA0A963}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Server</RootNamespace>
+    <AssemblyName>Server</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\Transaction\BuyAction.cs" />
+    <Compile Include="Actions\Transaction\ChangePriceAction.cs" />
+    <Compile Include="Actions\Transaction\DeleteAllTransactionAction.cs" />
+    <Compile Include="Actions\Transaction\DeleteTransactionAction.cs" />
+    <Compile Include="Actions\Transaction\SellAction.cs" />
+    <Compile Include="Actions\Transaction\TransactionAction.cs" />
+    <Compile Include="Actions\User\LoginAction.cs" />
+    <Compile Include="Actions\User\LogoutAction.cs" />
+    <Compile Include="Actions\User\RefreshSessionAction.cs" />
+    <Compile Include="Actions\User\RegisterAction.cs" />
+    <Compile Include="Actions\User\SubscribeAction.cs" />
+    <Compile Include="Database\Collection.cs" />
+    <Compile Include="Database\Config\DatabaseConfig.cs" />
+    <Compile Include="Database\Database.cs" />
+    <Compile Include="Database\Model\Diginote.cs" />
+    <Compile Include="Database\Model\GenericModel.cs" />
+    <Compile Include="Database\Model\History.cs" />
+    <Compile Include="Database\Model\Quote.cs" />
+    <Compile Include="Database\Model\Transaction.cs" />
+    <Compile Include="Database\Model\User.cs" />
+    <Compile Include="Database\Model\Wallet.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="TransactionController.cs" />
+    <Compile Include="UserController.cs" />
+    <Compile Include="Actions\Action\Action.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MongoDB.Bson, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\mongocsharpdriver.1.10.0\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\mongocsharpdriver.1.10.0\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{92b7a868-d61e-4afa-ad61-93489be140db}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger\Log.csproj">
+      <Project>{fa87b53d-fb75-46a9-85c6-834e518522a2}</Project>
+      <Name>Log</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="mongodb\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

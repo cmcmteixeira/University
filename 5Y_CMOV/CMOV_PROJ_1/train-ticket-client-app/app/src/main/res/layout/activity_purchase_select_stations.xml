@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.railway.railway.activity.PurchaseSelectStationsActivity"
+   >
+
+    <TextView android:text="@string/purchase_lbl_departure"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/purchase_lbl_departure"
+        android:textSize="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/purchase_departure_spinner"
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/purchase_lbl_departure"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView android:text="@string/purchase_lbl_arrival"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/purchase_lbl_arrival"
+        android:layout_below="@+id/purchase_departure_spinner"
+
+        android:textSize="20dp"
+        android:layout_marginTop="30dp" />
+
+    <Spinner
+        android:id="@+id/purchase_arrival_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/purchase_lbl_arrival"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/purchase_lbl_date_intro"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/purchase_arrival_spinner"
+        android:text="@string/purchase_lbl_date_intro"
+        android:textSize="20dp"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/purchase_lbl_date"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textSize="8pt"
+        android:textColor="@android:color/black"
+        android:text="29/19/2915"
+        android:layout_toLeftOf="@+id/purchase_btn_pick_date"
+        android:layout_below="@+id/purchase_lbl_date_intro"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical" />
+
+    <ImageButton
+        android:id="@+id/purchase_btn_pick_date"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="@string/purchase_btn_pick_date"
+        android:src="@drawable/calendar"
+        android:layout_alignTop="@+id/purchase_lbl_date"
+        android:layout_alignRight="@+id/purchase_lbl_date_intro"
+        android:layout_alignEnd="@+id/purchase_lbl_date_intro" />
+
+
+
+    <LinearLayout
+        android:id="@+id/purchase_layout_bottom_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/purchase_btn_proceed"
+            android:id="@+id/purchase_btn_search"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

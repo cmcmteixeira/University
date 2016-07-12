@@ -1,0 +1,60 @@
+<script src="public/vendor/admin-lte/dist/js/app.min.js"></script>
+<aside class="main-sidebar" ng-controller="navBarCtrl">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar" style="height: auto;">
+
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="header"><span>HOMEPAGE</span></li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-android"></i> <span>Application</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li ng-repeat="channel in channels">
+                        <a ng-href="#app/{{channel.name}}" >
+                            <i class="fa fa-circle-o" ng-show="currentChannel != channel.name"></i>
+                            <i class="fa fa-circle"   ng-show="currentChannel == channel.name"></i>{{channel.name}}
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="treeview ">
+                <a href="#">
+                    <i class="fa fa-table"></i> <span>Add new</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a ng-href="{{trackableUrl}}" > <i class="fa fa-circle-o"></i>Trackable</a></li>
+                    <li><a ng-href="{{sceneUrl}}">      <i class="fa fa-circle-o"></i>Scene</a></li>
+                    <li><a ng-href="{{channelUrl}}" >   <i class="fa fa-circle-o"></i>Application</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+
+
+</aside>
+<div class="example-modal" id="createNewTrackable">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>
+<!-- /.sidebar -->

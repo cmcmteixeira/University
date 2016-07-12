@@ -1,0 +1,4 @@
+<resources>
+    <string name="register_user_label">User</string>
+    <string name="register_card_label">Card</string>
+</resources>

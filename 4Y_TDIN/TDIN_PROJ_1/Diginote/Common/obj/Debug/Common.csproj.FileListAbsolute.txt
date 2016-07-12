@@ -1,0 +1,5 @@
+C:\Projects\TDIN01\Diginote\Common\bin\Debug\Common.dll
+C:\Projects\TDIN01\Diginote\Common\bin\Debug\Common.pdb
+C:\Projects\TDIN01\Diginote\Common\obj\Debug\Common.dll
+C:\Projects\TDIN01\Diginote\Common\obj\Debug\Common.pdb
+C:\Projects\TDIN01\Diginote\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

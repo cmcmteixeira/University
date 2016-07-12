@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.railway.railway" >
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".RailwayApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="true"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:label="@string/title_activity_activity_register" >
+        </activity>
+        <activity
+            android:name=".activity.UserActivity"
+            android:label="@string/title_activity_user" >
+        </activity>
+        <activity
+            android:name=".activity.TicketQRCodeActivity"
+            android:label="@string/title_activity_ticket_qrcode"
+            android:parentActivityName=".activity.UserActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.railway.railway.activity.UserActivity" />
+        </activity>
+        <activity
+            android:name=".activity.PurchaseSelectStationsActivity"
+            android:label="@string/title_activity_purchase_select_stations"
+            android:parentActivityName=".activity.UserActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.railway.railway.activity.UserActivity" />
+        </activity>
+        <activity
+            android:name=".activity.PurchaseSelectScheduleActivity"
+            android:label="@string/title_activity_purchase_select_schedule" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.railway.railway.activity.PurchaseSelectStationsActivity" />
+        </activity>
+        <activity
+            android:name=".activity.UsedTicketsActivity"
+            android:label="@string/title_activity_used_tickets"
+            android:parentActivityName=".activity.UserActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.railway.railway.activity.UserActivity" />
+        </activity>
+        <activity
+            android:name=".activity.AccountActivity"
+            android:label="@string/title_activity_account" >
+        </activity>
+    </application>
+
+</manifest>

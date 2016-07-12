@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Railway Conductor</string>
+    <string name="title_activity_qrcode_reader">QRCodeReader</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_select_schedule">Select Schedule</string>
+    <string name="title_activity_select_time_table">Select Time</string>
+    <string name="title_activity_menu">MenuActivity</string>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="title_activity_login">Inspector</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_username">username</string>
+    <string name="prompt_email">email</string>
+    <string name="prompt_password">password</string>
+    <string name="action_sign_in">Login</string>
+
+    <string name="login_info">Railway Inspector</string>
+
+</resources>

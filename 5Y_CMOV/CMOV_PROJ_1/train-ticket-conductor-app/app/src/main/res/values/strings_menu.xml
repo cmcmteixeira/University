@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_select_schedule">Select Schedule</string>
+    <string name="menu_validate">End trip</string>
+    <string name="menu_logout">Logout</string>
+</resources>

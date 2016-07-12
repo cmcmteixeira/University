@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This group uses the default category. -->
+    <group android:id="@+id/menu_main">
+        <item android:id="@+id/menu_select_schedule"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="@string/menu_select_schedule" />
+        <item android:id="@+id/menu_logout"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="@string/menu_logout" />
+    </group>
+</menu>

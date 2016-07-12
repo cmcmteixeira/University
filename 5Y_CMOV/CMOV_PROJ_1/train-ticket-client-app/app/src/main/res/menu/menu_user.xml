@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This group uses the default category. -->
+    <group android:id="@+id/menu_user_main">
+        <item android:id="@+id/menu_used_tickets"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="@string/menu_used_tickets" />
+        <item android:id="@+id/menu_user_schedule"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="@string/menu_user_schedule" />
+        <item android:id="@+id/menu_user_settings"
+            android:icon="@android:drawable/ic_menu_camera"
+            android:title="@string/menu_user_settings" />
+        <item android:id="@+id/menu_user_logout"
+            android:icon="@android:drawable/ic_menu_camera"
+            android:title="@string/menu_user_logout" />
+    </group>
+</menu>

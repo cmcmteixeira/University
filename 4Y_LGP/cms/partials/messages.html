@@ -1,0 +1,8 @@
+<div style="z-index:10000000;position: fixed;right:10px;top:{{55*$index+50}}px;" ng-repeat="message in messages" >
+    <div class="alert alert-success" role="alert" ng-show="message.type == 'success'">
+        {{message.message}}
+    </div>
+    <div class="right-corner alert alert-danger"  role="alert" ng-show="message.type == 'error'">
+        {{message.message}}
+    </div>
+</div>

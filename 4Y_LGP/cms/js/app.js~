@@ -1,0 +1,8 @@
+angular.module('app', [])
+ 
+.controller('BeerCounter', function($scope, $locale, $http) {
+	console.log($http);
+	$http({
+		url: 'http://api.lgp.dev/channel/list',
+		method: 'GET'});
+});

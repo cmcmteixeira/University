@@ -1,0 +1,40 @@
+<div ng-include="'partials/topbar.html'"></div>
+<div ng-include="'partials/navbar.html'"></div>
+<div class="wrapper channelMenu" ng-controller="adminCtrl">
+    <div ng-include="'partials/messages.html'"></div>
+
+    <div><h3>Admin Panel</h3></div>
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Applications</h3>
+            <div class="box-tools">
+                <div class="input-group">
+                    <input data-ng-model="filterChannel.name" type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.box-header -->
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+                <tbody>
+                <tr>
+                    <th width="15%"></th>
+                    <th width="30%">Name</th>
+                    <th width="20%">Date</th>
+                    <th width="40%">Description</th>
+                    <th width="5%" class="text-center">Remove</th>
+                </tr>
+                <tr ng-repeat="(key,channel) in channels | filter: filterChannel ">
+                    <td>{{key+1}}</td>
+                    <td>{{channel.name }}</td>
+                    <td>{{channel.createdAt }}</td>
+                    <td>{{channel.description}}</td>
+                    <td class="text-center"><a href=""   ng-click="deleteChannel(channel)"><i class="fa fa-remove"></i></a></td>
+                </tr>
+                </tbody></table>
+        </div><!-- /.box-body -->
+    </div>
+
+</div>

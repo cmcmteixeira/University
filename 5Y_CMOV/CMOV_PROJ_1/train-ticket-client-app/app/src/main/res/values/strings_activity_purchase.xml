@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="purchase_lbl_intro">I\'d like to travel...</string>
+
+    <string name="purchase_lbl_departure">Departure:</string>
+    <string name="purchase_lbl_arrival">Arrival:</string>
+    <string name="purchase_lbl_date_intro">Date:</string>
+    <string name="purchase_btn_proceed">Search Schedule</string>
+    <string name="purchase_btn_pick_date">Pick Date</string>
+
+    <string name="purchase_confirm_dialog_title">Confirm your purchase</string>
+    <string name="purchase_confirm_dialog_positive">Purchase</string>
+    <string name="purchase_confirm_dialog_negative">Cancel</string>
+
+    <string name="purchase_success">Your ticket was bought with success!</string>
+    <string name="purchase_error">Please check your Credit Card information and try again.</string>
+
+
+</resources>

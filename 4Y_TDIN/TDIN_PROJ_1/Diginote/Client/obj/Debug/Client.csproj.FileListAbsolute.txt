@@ -1,0 +1,17 @@
+C:\Projects\TDIN01\Diginote\Client\bin\Debug\Client.exe.config
+C:\Projects\TDIN01\Diginote\Client\bin\Debug\Client.exe
+C:\Projects\TDIN01\Diginote\Client\bin\Debug\Client.pdb
+C:\Projects\TDIN01\Diginote\Client\bin\Debug\Common.dll
+C:\Projects\TDIN01\Diginote\Client\bin\Debug\Common.pdb
+C:\Projects\TDIN01\Diginote\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Projects\TDIN01\Diginote\Client\obj\Debug\Client.RegistryForm.resources
+C:\Projects\TDIN01\Diginote\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Projects\TDIN01\Diginote\Client\obj\Debug\Client.exe
+C:\Projects\TDIN01\Diginote\Client\obj\Debug\Client.pdb
+C:\Projects\TDIN01\Diginote\Client\obj\Debug\Client.LoginForm.resources
+C:\Projects\TDIN01\Diginote\Client\obj\Debug\Client.InitialForm.resources
+C:\Projects\TDIN01\Diginote\Client\obj\Debug\Client.ClientForm.resources
+C:\Projects\TDIN01\Diginote\Client\bin\Debug\Logger.dll
+C:\Projects\TDIN01\Diginote\Client\bin\Debug\Logger.pdb
+C:\Projects\TDIN01\Diginote\Client\obj\Debug\Client.NewPriceForm.resources
+C:\Projects\TDIN01\Diginote\Client\obj\Debug\Client.DeleteAllForm.resources

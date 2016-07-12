@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.railway.railway.activity.AccountActivity">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/account_scroll_view"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/account_lbl_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/register_user_label"/>
+
+            <EditText
+                android:id="@+id/account_input_username"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/account_lbl_user"
+                android:cursorVisible="false"
+                android:hint="@string/account_hint_username" />
+
+            <EditText
+                android:id="@+id/account_input_email"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/account_input_username"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:hint="@string/account_hint_email"/>
+
+            <EditText
+                android:id="@+id/account_input_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:hint="@string/account_hint_password"
+                android:layout_below="@+id/account_input_email" />
+
+            <EditText
+                android:id="@+id/account_input_confirm_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:hint="@string/account_hint_confirm_password"
+                android:layout_below="@+id/account_input_password" />
+
+            <TextView
+                android:id="@+id/account_lbl_card"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/register_card_label"
+                android:layout_below="@+id/account_input_confirm_password"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:id="@+id/account_input_card_number"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:layout_below="@+id/account_lbl_card"
+                android:hint="@string/account_hint_card_number"/>
+
+            <Spinner
+                android:id="@+id/account_input_card_type"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:entries="@array/credit_card_types"
+                android:layout_marginTop="10sp"
+                android:layout_below="@+id/account_input_card_number"/>
+
+            <EditText
+                android:id="@+id/account_input_card_date"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|date"
+                android:hint="@string/account_hint_validity"
+                android:ems="10"
+                android:layout_below="@+id/account_input_card_type" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/account_layout_bottom_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" >
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/account_submit"
+            android:id="@+id/account_submit_button" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

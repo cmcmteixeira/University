@@ -1,0 +1,14 @@
+C:\Projects\TDIN01\Diginote\Server\bin\Debug\Server.exe.config
+C:\Projects\TDIN01\Diginote\Server\bin\Debug\Server.exe
+C:\Projects\TDIN01\Diginote\Server\bin\Debug\Server.pdb
+C:\Projects\TDIN01\Diginote\Server\bin\Debug\Common.dll
+C:\Projects\TDIN01\Diginote\Server\bin\Debug\MongoDB.Bson.dll
+C:\Projects\TDIN01\Diginote\Server\bin\Debug\MongoDB.Driver.dll
+C:\Projects\TDIN01\Diginote\Server\bin\Debug\Common.pdb
+C:\Projects\TDIN01\Diginote\Server\bin\Debug\MongoDB.Bson.xml
+C:\Projects\TDIN01\Diginote\Server\bin\Debug\MongoDB.Driver.xml
+C:\Projects\TDIN01\Diginote\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Projects\TDIN01\Diginote\Server\obj\Debug\Server.exe
+C:\Projects\TDIN01\Diginote\Server\obj\Debug\Server.pdb
+C:\Projects\TDIN01\Diginote\Server\bin\Debug\Logger.dll
+C:\Projects\TDIN01\Diginote\Server\bin\Debug\Logger.pdb

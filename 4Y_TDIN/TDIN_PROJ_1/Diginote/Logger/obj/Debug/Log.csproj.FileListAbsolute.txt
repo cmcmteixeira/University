@@ -1,0 +1,6 @@
+C:\Projects\TDIN01\Diginote\Logger\bin\Debug\Logger.dll
+C:\Projects\TDIN01\Diginote\Logger\bin\Debug\Logger.pdb
+C:\Projects\TDIN01\Diginote\Logger\obj\Debug\Log.LoggerForm.resources
+C:\Projects\TDIN01\Diginote\Logger\obj\Debug\Log.csproj.GenerateResource.Cache
+C:\Projects\TDIN01\Diginote\Logger\obj\Debug\Logger.dll
+C:\Projects\TDIN01\Diginote\Logger\obj\Debug\Logger.pdb

@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="com.lgp.lgp.login_activity"
+    android:background="#ff009788"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:clickable="false">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:id="@+id/imageView"
+        android:src="@mipmap/logo_final"
+        android:layout_marginBottom="40dp"/>
+
+    <EditText
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_user"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Utilizador"
+        android:gravity="center"
+        android:textColor="#ffffffff"
+        android:textColorHint="#ffffffff"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/apptheme_edit_text_holo_light" />
+
+    <EditText
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:inputType="numberPassword"
+        android:ems="10"
+        android:id="@+id/editText_password"
+        android:hint="PIN"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:editable="false"
+        android:backgroundTint="#ffd39569"
+        android:autoText="false"
+        android:textColor="#ffffffff"
+        android:textColorHint="#ffffffff" />
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:text="Entrar"
+        android:id="@+id/login_button"
+        android:background="@drawable/login_button"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/abc_text_size_large_material" />
+
+
+</LinearLayout>
